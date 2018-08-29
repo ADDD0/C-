@@ -1,4 +1,4 @@
-//将例1.6程序改为通过函数模板来实现
+//将例1.6程序改为通过函数模板来实现。
 #include<iostream>
 using namespace std;
 template<typename T>  //模板声明,其中T为类型参数

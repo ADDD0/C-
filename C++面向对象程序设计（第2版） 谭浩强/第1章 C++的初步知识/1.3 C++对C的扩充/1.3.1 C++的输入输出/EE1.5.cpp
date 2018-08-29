@@ -1,4 +1,4 @@
-//用cin和cout实现数据的输入输出
+//用cin和cout实现数据的输入输出。
 #include<iostream>
 using namespace std;
 int main()

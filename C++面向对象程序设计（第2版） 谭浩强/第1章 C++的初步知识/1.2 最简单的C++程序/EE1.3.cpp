@@ -1,4 +1,4 @@
-//从键盘输入两个数a和b,求两数中的大者
+//从键盘输入两个数a和b，求两数中的大者。
 #include<iostream>
 using namespace std;
 int main()

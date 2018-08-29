@@ -1,17 +1,17 @@
-//求3个数中最大的数(分别考虑整数,实数,长整数的情况)
+//求3个数中最大的数（分别考虑整数、实数、长整数的情况）。
 #include<iostream>
 using namespace std;
-int max(int a,int b,int c)
+int max(int a,int b,int c)          //求3个整数中的最大者
   {if(b>a) a=b;
    if(c>a) a=c;
    return a;
   }
-float max(float a,float b,float c)
+float max(float a,float b,float c)  //求3个实数中的最大者
   {if(b>a) a=b;
    if(c>a) a=c;
    return a;
   }
-long max(long a,long b,long c)
+long max(long a,long b,long c)      //求3个长整数中的最大者
   {if(b>a) a=b;
    if(c>a) a=c;
    return a;

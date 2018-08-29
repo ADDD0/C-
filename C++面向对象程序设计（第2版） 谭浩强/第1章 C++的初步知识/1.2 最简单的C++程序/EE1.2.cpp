@@ -1,5 +1,5 @@
-//求a和b两个数之和
-//求两数之和                 (本行是注释行)
+//求a和b两个数之和。
+//求两数之和(本行是注释行)
 #include<iostream>           //预处理命令
 using namespace std;         //使用名字空间std
 int main()                   //主函数首部
@@ -8,5 +8,5 @@ int main()                   //主函数首部
    cin>>a>>b;                //输入语句
    sum=a+b;                  //赋值语句
    cout<<"a+b="<<sum<<endl;  //输出语句
-   return 0;                 //如程序正常结束,向操作系统返回一个零值
+   return 0;  //如程序正常结束,向操作系统返回一个零值
   }
