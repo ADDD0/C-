@@ -12,8 +12,8 @@ void sort(int i[], int n)
             if (i[k] > i[k + 1])
                 temp = i[k], i[k] = i[k + 1], i[k + 1] = temp;
     for (j = 0; j < n; ++j)
-        cout<<i[j]<<" ";
-    cout<<endl;
+        cout << i[j] << " ";
+    cout << endl;
 }
 
 void sort(float f[], int n)
@@ -26,8 +26,8 @@ void sort(float f[], int n)
             if (f[k] > f[k + 1])
                 temp = f[k], f[k] = f[k + 1], f[k + 1] = temp;
     for (j = 0; j < n; ++j)
-        cout<<f[j]<<" ";
-    cout<<endl;
+        cout << f[j] << " ";
+    cout << endl;
 }
 
 void sort(double d[], int n)
@@ -40,8 +40,8 @@ void sort(double d[], int n)
             if (d[k] > d[k + 1])
                 temp = d[k], d[k] = d[k + 1], d[k + 1] = temp;
     for (j = 0; j < n; ++j)
-        cout<<d[j]<<" ";
-    cout<<endl;
+        cout << d[j] << " ";
+    cout << endl;
 }
 
 int main()

@@ -7,12 +7,12 @@ int main()
     unsigned a, b, c,
         maxf(unsigned, unsigned, unsigned);
 
-    cin>>a>>b;
+    cin >> a >> b;
     if (cin.get() == '\n')
-        cout<<"max="<<maxf(a, b, c = 0)<<endl;
+        cout << "max=" << maxf(a, b, c = 0) << endl;
     else {
-        cin>>c;
-        cout<<"max="<<maxf(a, b, c)<<endl;
+        cin >> c;
+        cout << "max=" << maxf(a, b, c) << endl;
     }
     return 0;
 }

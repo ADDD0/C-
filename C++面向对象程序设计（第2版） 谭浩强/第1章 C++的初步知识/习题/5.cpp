@@ -20,7 +20,7 @@ int main()
 {
     int a = 10, b = 23, add(int, int);
 
-    cout<<"a+b="<<add(a, b)<<endl;
+    cout << "a+b=" << add(a, b) << endl;
     return 0;
 }
 

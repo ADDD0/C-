@@ -9,12 +9,12 @@ int main()
     int i, j;
 
     for (i = 0; i < 5; ++i)
-        cin>>s[i];
+        cin >> s[i];
     for (i = 0; i < 5; ++i)
         for (j = 0; j < 4 - i; ++j)
             if (s[j] > s[j + 1])
                 temp = s[j], s[j] = s[j + 1], s[j + 1] = temp;
     for (i = 0; i < 5; ++i)
-        cout<<s[i]<<endl;
+        cout << s[i] << endl;
     return 0;
 }

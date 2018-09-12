@@ -14,14 +14,14 @@ class Time
     public:
         void set_time()
         {
-            cin>>hour;
-            cin>>minute;
-            cin>>sec;
+            cin >> hour;
+            cin >> minute;
+            cin >> sec;
         }
 
         void show_time()
         {
-            cout<<hour<<":"<<minute<<":"<<sec<<endl;
+            cout << hour << ":" << minute << ":" << sec << endl;
         }
 };
 

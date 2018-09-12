@@ -7,14 +7,14 @@ int main()
     int a[3], i, j;
 
     for (i = 0; i < 3; ++i)
-        cin>>a[i];
+        cin >> a[i];
     for (i = 0; i < 3; ++i)
         for (j = 0; j < 2 - i; ++j)
             if (a[j] > a[j + 1])
                 swap(a[j], a[j + 1]);
     for (i = 0; i < 3; ++i)
-        cout<<a[i]<<" ";
-    cout<<endl;
+        cout << a[i] << " ";
+    cout << endl;
     return 0;
 }
 

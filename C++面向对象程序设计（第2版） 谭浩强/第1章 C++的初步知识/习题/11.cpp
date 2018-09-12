@@ -9,8 +9,8 @@ int main()
 {
     string s;
 
-    cin>>s;
+    cin >> s;
     reverse(s.begin(),s.end());
-    cout<<s<<endl;
+    cout << s << endl;
     return 0;
 }

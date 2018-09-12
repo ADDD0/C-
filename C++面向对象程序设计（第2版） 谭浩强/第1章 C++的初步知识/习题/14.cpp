@@ -13,8 +13,8 @@ void sort(T a[], int n)
             if (a[k] > a[k + 1])
                 temp = a[k], a[k] = a[k + 1], a[k + 1] = temp;
     for (j = 0; j < n; ++j)
-        cout<<a[j]<<" ";
-    cout<<endl;
+        cout << a[j] << " ";
+    cout << endl;
 }
 
 int main()

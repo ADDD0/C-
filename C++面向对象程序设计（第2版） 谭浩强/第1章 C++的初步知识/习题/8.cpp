@@ -6,10 +6,10 @@ int main()
 {
     int a, b, &c = a, &d = b;
 
-    cin>>a>>b;
+    cin >> a >> b;
     if (a > b)
-        cout<<c<<" "<<d<<endl;
+        cout << c << " " << d << endl;
     else
-        cout<<d<<" "<<c<<endl;
+        cout << d << " " << c << endl;
     return 0;
 }
