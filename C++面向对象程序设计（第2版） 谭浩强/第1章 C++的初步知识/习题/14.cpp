@@ -1,18 +1,20 @@
-/* 对第13题改用函数模板实现，并与13题程序进行对比分析。 */
+/**
+ * 对第13题改用函数模板实现，并与13题程序进行对比分析。
+ */
 #include <iostream>
+
 using namespace std;
+
 template<typename T>
 
-void sort(T a[], int n)
-{
-    int j, k;
+void sort(T a[], int n) {
     T temp;
 
-    for (j = 0; j < n; ++j)
-        for (k = 0; k < n - 1 - j; ++k)
+    for (int j=0; j < n; ++j)
+        for (int k=0; k < n - 1 - j; ++k)
             if (a[k] > a[k + 1])
                 temp = a[k], a[k] = a[k + 1], a[k + 1] = temp;
-    for (j = 0; j < n; ++j)
+    for (int j=0; j < n; ++j)
         cout << a[j] << " ";
     cout << endl;
 }

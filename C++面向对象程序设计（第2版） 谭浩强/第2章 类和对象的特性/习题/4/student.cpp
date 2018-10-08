@@ -1,8 +1,7 @@
 #include <iostream>
 #include "student.h"
 
-void Student::set_value()
-{
+void Student::set_value() {
     cout << "num:";
     cin >> num;
     cout << "name:";
@@ -11,8 +10,7 @@ void Student::set_value()
     cin >> sex;
 }
 
-void Student::display()
-{
+void Student::display() {
     cout << "num:" << num << endl;
     cout << "name:" << name << endl;
     cout << "sex:" << sex << endl;

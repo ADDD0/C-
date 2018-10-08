@@ -1,10 +1,12 @@
-/* 在第2题的基础上进行如下修改：
-在类体内声明成员函数，而在类外定义成员函数。 */
+/**
+ * 在第2题的基础上进行如下修改：
+ * 在类体内声明成员函数，而在类外定义成员函数。
+ */
 #include <iostream>
+
 using namespace std;
 
-class Time
-{
+class Time {
     private:
         int hour;
         int minute;
@@ -14,9 +16,7 @@ class Time
         void show_time();
 };
 
-int main()
-{
-
+int main() {
     Time t;
 
     t.set_time();
@@ -24,14 +24,10 @@ int main()
     return 0;
 }
 
-void Time::set_time()
-{
-    cin >> hour;
-    cin >> minute;
-    cin >> sec;
+void Time::set_time() {
+    cin >> hour >> minute >> sec;
 }
 
-void Time::show_time()
-{
+void Time::show_time() {
     cout << hour << ":" << minute << ":" << sec << endl;
 }

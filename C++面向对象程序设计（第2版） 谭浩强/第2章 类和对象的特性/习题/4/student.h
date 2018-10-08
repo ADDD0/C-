@@ -1,8 +1,8 @@
 #include <string>
+
 using namespace std;
 
-class Student
-{
+class Student {
     public:
         void set_value();
         void display();

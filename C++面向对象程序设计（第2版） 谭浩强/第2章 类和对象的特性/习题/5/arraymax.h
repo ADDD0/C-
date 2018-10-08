@@ -1,7 +1,6 @@
 using namespace std;
 
-class Array_max
-{
+class Array_max {
     public:
         void set_value();
         void max_value();
