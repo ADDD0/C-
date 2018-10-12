@@ -9,16 +9,13 @@ class Time
      int sec;
      void get_time();          //声明公有成员函数
   };
-
 Time::Time(int h,int m,int s)  //定义结构函数
   {hour=h;
    minute=m;
    sec=s;
   }
-
 void Time::get_time()          //定义公有成员函数
-  {cout<<hour<<":"<<minute<<":"<<sec<<endl;
-  }
+  {cout<<hour<<":"<<minute<<":"<<sec<<endl;}
 
 int main()
   {Time t1(10,13,56);          //定义Time类对象t1并初始化

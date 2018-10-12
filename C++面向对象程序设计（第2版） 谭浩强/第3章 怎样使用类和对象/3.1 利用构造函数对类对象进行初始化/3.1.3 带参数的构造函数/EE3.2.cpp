@@ -11,7 +11,6 @@ class Box                      //声明Box类
      int width;                //宽
      int length;               //长
   };
-
 Box::Box(int h,int w,int len)  //在类外定义带参数的构造函数
   {height=h;
    width=w;

@@ -29,22 +29,16 @@
 
 using namespace std;
 
-class Student
-{
+class Student {
     public:
-        Student(int n, float s): num(n), score(s)
-        {
-            ;
-        }
+        Student(int n, float s): num(n), score(s) {}
 
-        void change(int n, float s)
-        {
+        void change(int n, float s) {
             num = n;
             score = s;
         }
 
-        void display()
-        {
+        void display() {
             cout << num << " " << score << endl;
         }
     private:
@@ -52,8 +46,7 @@ class Student
         float score;
 };
 
-int main()
-{
+int main() {
     const Student stud(101, 78.5);
 
     stud.display();

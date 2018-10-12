@@ -6,8 +6,7 @@
 
 using namespace std;
 
-class Student
-{
+class Student {
     public:
         void set();
         void display();
@@ -16,18 +15,15 @@ class Student
         float score;
 };
 
-void Student::set()
-{
+void Student::set() {
     cin >> sno >> score;
 }
 
-void Student::display()
-{
+void Student::display() {
     cout << "sno:" << sno << " score:" << score << endl;
 }
 
-int main()
-{
+int main() {
     Student *p = new Student[5];
 
     for (int i=0; i < 5; ++i) {

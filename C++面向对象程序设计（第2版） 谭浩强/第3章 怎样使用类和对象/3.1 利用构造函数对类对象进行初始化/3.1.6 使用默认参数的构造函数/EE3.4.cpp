@@ -10,7 +10,6 @@ class Box
      int width;
      int length;
   };
-
 Box::Box(int h,int w,int len)            //在定义Box函数时可以不指定默认参数
   {height=h;
    width=w;
@@ -22,7 +21,8 @@ int Box::volume()
   }
 
 int main()
-  {Box box1;                             //没有给定实参
+  {
+   Box box1;                             //没有给定实参
    cout<<"The volume of box1 is "<<box1.volume()<<endl;
    Box box2(15);                         //只给定一个实参
    cout<<"The volume of box2 is "<<box2.volume()<<endl;

@@ -6,22 +6,16 @@
 
 using namespace std;
 
-class Student
-{
+class Student {
     public:
-        Student(int n, float s): num(n), score(s)
-        {
-            ;
-        }
+        Student(int n, float s): num(n), score(s) {}
 
-        void change(int n, float s)
-        {
+        void change(int n, float s) {
             num = n;
             score = s;
         }
 
-        void display()
-        {
+        void display() {
             cout << num << " " << score << endl;
         }
     private:
@@ -29,8 +23,7 @@ class Student
         float score;
 };
 
-int main()
-{
+int main() {
     void fun(Student &);
 
     Student stud(101, 78.5);
@@ -39,8 +32,7 @@ int main()
     return 0;
 }
 
-void fun(Student &stu)
-{
+void fun(Student &stu) {
     stu.display();
     stu.change(101, 80.5);
     stu.display();

@@ -6,26 +6,20 @@
 
 using namespace std;
 
-class Student
-{
+class Student {
     public:
-        Student(int n, float s): sno(n), score(s)
-        {
-            ;
-        }
+        Student(int n, float s): sno(n), score(s) {}
         void showSno();
 
         int sno;
         float score;
 };
 
-void Student::showSno()
-{
+void Student::showSno() {
     cout << "sno:" << sno << endl;
 }
 
-int main()
-{
+int main() {
     Student max(Student *);
 
     Student arr[] = {
@@ -36,8 +30,7 @@ int main()
     max(arr).showSno();
 }
 
-Student max(Student *p)
-{
+Student max(Student *p) {
     Student *max=p;
 
     for (int i=0; i < 5; ++i)

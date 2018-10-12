@@ -12,7 +12,6 @@ class Box
      int width;
      int length;
   };
-
 Box::Box()              //在类外定义无参构造函数Box
   {height=10;
    width=10;

@@ -16,13 +16,9 @@
 
 using namespace std;
 
-class Product
-{
+class Product {
     public:
-        Product(int n, int q, float p): num(n), quantity(q), price(p)
-        {
-            ;
-        }
+        Product(int n, int q, float p): num(n), quantity(q), price(p) {}
         void total();
         static float average();
         static void display();
@@ -42,26 +38,22 @@ float Product::rate = 1;
 float Product::sum = 0;
 int Product::n = 0;
 
-void Product::total()
-{
+void Product::total() {
     n += quantity;
     rate = quantity > 10 ? 0.98 : 1;
     sum += quantity * price * discount * rate;
 }
 
-float Product::average()
-{
+float Product::average() {
     return sum / n;
 }
 
-void Product::display()
-{
+void Product::display() {
     cout << "sum:" << sum << endl;
     cout << "average:" << average() << endl;
 }
 
-int main()
-{
+int main() {
     Product sale[3] = {
         Product(101, 5, 23.5),
         Product(102, 12, 24.56),

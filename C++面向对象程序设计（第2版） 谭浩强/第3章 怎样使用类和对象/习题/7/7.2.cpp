@@ -2,22 +2,16 @@
 
 using namespace std;
 
-class Student
-{
+class Student {
     public:
-        Student(int n, float s): num(n), score(s)
-        {
-            ;
-        }
+        Student(int n, float s): num(n), score(s) {}
 
-        void change(int n, float s) const
-        {
+        void change(int n, float s) const {
             num = n;
             score = s;
         }
 
-        void display() const
-        {
+        void display() const {
             cout << num << " " << score << endl;
         }
     private:
@@ -25,8 +19,7 @@ class Student
         mutable float score;
 };
 
-int main()
-{
+int main() {
     const Student stud(101, 78.5);
 
     stud.display();
