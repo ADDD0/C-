@@ -16,7 +16,7 @@ class Time                     //声明Time类
 class Date                     //声明Date类
   {public:
      Date(int,int,int);        //声明构造函数
-     friend void Time::display(Date &);           //声明Time中的dislpay函数为
+     friend void Time::display(Date &);           //声明Time中的display函数为
                                                   //本类的友元成员函数
    private:
      int month;
