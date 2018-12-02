@@ -14,7 +14,9 @@ class Complex {
         void display();
 
         friend Complex operator + (Complex &, double &);
-        operator double() {return real;}
+        operator double() {
+            return real;
+        }
     private:
         double real, imag;
 };

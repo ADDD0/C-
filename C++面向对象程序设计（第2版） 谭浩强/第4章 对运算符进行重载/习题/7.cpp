@@ -26,7 +26,9 @@ class Student {
         Student(int num=0, char *na=NULL, char s='m') {
             number = num, name = na, sex = s;
         }
-        operator Teacher() {return Teacher(number, name, sex);}
+        operator Teacher() {
+            return Teacher(number, name, sex);
+        }
     private:
         int number;
         char *name;
