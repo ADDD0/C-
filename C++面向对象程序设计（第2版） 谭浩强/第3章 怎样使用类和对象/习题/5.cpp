@@ -28,6 +28,7 @@ int main() {
     };
 
     max(arr).showSno();
+	return 0;
 }
 
 Student max(Student *p) {
