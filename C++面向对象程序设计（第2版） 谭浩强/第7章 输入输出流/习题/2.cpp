@@ -7,7 +7,7 @@
 using namespace std;
 
 int main() {
-    const int length=3;
+    const int length=5;
     float n[length];
 
     for (int i=0; i < length; ++i) {
@@ -15,8 +15,8 @@ int main() {
         cin >> n[i];
     }
     for (int i=0; i < length; ++i) {
-        cout << setiosflags(ios::right) << setprecision(3);
-        cout << n[i] << endl;
+        cout << setiosflags(ios::fixed) << setprecision(3);
+        cout << setfill(' ') << setw(15) << n[i] << endl;
     }
     return 0;
 }
