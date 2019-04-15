@@ -1,16 +1,22 @@
 {
     "configurations": [
         {
-            "name": "Win32",
+            "name": "MinGW64",
+            "intelliSenseMode": "gcc-x64",
+            "compilerPath": "C:\\MinGW\\bin\\gcc.exe",
+            "systemIncludePath": [
+                "C:\\MinGW\\mingw32\\include"
+            ],
             "includePath": [
-                "C:\\MinGW\\bin"
+                "${workspaceFolder}"
             ],
-            "defines": [
-                "_DEBUG",
-                "UNICODE",
-                "_UNICODE"
-            ],
-            "intelliSenseMode": "msvc-x64"
+            "browse": {
+                "path": [
+                    "${workspaceFolder}"
+                ]
+            },
+            "limitSymbolsToIncludedHeaders": true,
+            "cStandard": "c11"
         }
     ],
     "version": 4
