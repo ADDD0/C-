@@ -12,7 +12,7 @@ void comb(int a[], int res[], int n, int r, int LENGTH) {
         if (r > 1)
             comb(a, res, i-1, r-1, LENGTH);
         else {
-            for (int j=0; j < L; ++j)
+            for (int j=0; j < LENGTH; ++j)
                 cout << res[j] << " ";
             cout << endl;
         }
@@ -35,4 +35,3 @@ int main() {
 
     return 0;
 }
-
