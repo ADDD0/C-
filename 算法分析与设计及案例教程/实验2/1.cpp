@@ -3,13 +3,11 @@
 using namespace std;
 
 int main() {
-    int flag;
-
     for (int a=1; a < 5; ++a)
         for (int b=1; b < 5 && b != a; ++b)
             for (int c=1; c < 5 && c != b && c != a; ++c) {
                 int d = 10 - a - b - c;
-                flag = 0;
+                int flag = 0;
                 if (a == 1 ^ b == 3)
                     ++flag;
                 if (c == 1 ^ d == 4)
@@ -23,4 +21,5 @@ int main() {
                     cout << "d=" << d << endl;
                 }
             }
+    return 0;
 }

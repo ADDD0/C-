@@ -33,7 +33,8 @@ int main() {
         if (p[i]) {
             int offset = (i + k - 1) % TOTAL;
             offset = offset ? offset : TOTAL;
-            printf("%d\n", offset);
+            cout << offset << endl;
         }
+
     return 0;
 }

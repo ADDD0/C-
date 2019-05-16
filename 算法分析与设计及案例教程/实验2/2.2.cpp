@@ -18,8 +18,10 @@ int main() {
         for (int defective=1, num=1; defective < 11; ++defective, num *= 2)
             if (num * 2 > difference) {
                 difference -= num;
-                cout << defective << " ";
+                cout << defective << ' ';
                 break;
             }
     cout << "is defective" << endl;
+
+    return 0;
 }

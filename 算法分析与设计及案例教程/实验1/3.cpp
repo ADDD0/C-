@@ -40,5 +40,6 @@ int main() {
             cout << a[i][j] << ' ';
         cout << endl;
     }
+
     return 0;
 }

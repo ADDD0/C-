@@ -14,4 +14,6 @@ int main() {
 
     int defective = (standard - total) / 10;
     cout << defective << " is defective" << endl;
+
+    return 0;
 }

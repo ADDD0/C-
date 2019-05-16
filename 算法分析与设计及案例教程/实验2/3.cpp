@@ -1,4 +1,5 @@
 #include <iostream>
+#include <string.h>
 #include <iomanip>
 
 using namespace std;
@@ -9,12 +10,10 @@ int main() {
     cin >> n;
 
     int **a = new int*[n];
-    for (int i=0; i < n; ++i)
+    for (int i=0; i < n; ++i) {
         a[i] = new int[n];
-
-    for (int i=0; i < n; ++i)
-        for (int j=0; j < n; ++j)
-            a[i][j] = 0;
+        memset(a[i], 0, sizeof(int) * n);
+    }
 
     int row = 0;
     int col = n / 2;
@@ -41,4 +40,6 @@ int main() {
             cout << setw(4) << a[i][j];
         cout << endl;
     }
+
+    return 0;
 }

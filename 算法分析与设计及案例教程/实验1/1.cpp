@@ -13,7 +13,7 @@ void comb(int a[], int res[], int n, int r, int LENGTH) {
             comb(a, res, i-1, r-1, LENGTH);
         else {
             for (int j=0; j < LENGTH; ++j)
-                cout << res[j] << " ";
+                cout << res[j] << ' ';
             cout << endl;
         }
     }
