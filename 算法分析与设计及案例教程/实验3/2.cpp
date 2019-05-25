@@ -14,7 +14,7 @@ void KnapSack(int v[], int w[], int c, int n, int **m) {
 }
 
 void Traceback(int **m, int w[], int c, int n, int x[]) {
-    cout << "×°Èë×Ü¼ÛÖµ:" << m[n-1][c] << endl;
+    cout << "è£…å…¥æ€»ä»·å€¼:" << m[n-1][c] << endl;
     for (int i=n-1; i > 0; --i)
         if (m[i][c] == m[i-1][c])
             x[i] = 0;
@@ -23,7 +23,7 @@ void Traceback(int **m, int w[], int c, int n, int x[]) {
             c = c - w[i];
         }
     x[0] = (m[0][c]) ? 1 : 0;
-    cout << "×îÓÅ½â:";
+    cout << "æœ€ä¼˜è§£:";
     for (int i=0; i < n; ++i)
         if (x[i])
             cout << i+1 << ' ';
@@ -32,15 +32,15 @@ void Traceback(int **m, int w[], int c, int n, int x[]) {
 
 int main() {
     int n, c;
-    cout << "ÎïÆ·ÊıÁ¿:";
+    cout << "ç‰©å“æ•°é‡:";
     cin >> n;
-    cout << "±³°üÈİÁ¿:";
+    cout << "èƒŒåŒ…å®¹é‡:";
     cin >> c;
 
     int *w = new int[n];
     int *v = new int[n];
     for (int i=0; i < n; ++i) {
-        cout << "ÎïÆ·" << i+1 << "µÄÖØÁ¿¼°Æä¼ÛÖµ:";
+        cout << "ç‰©å“" << i+1 << "çš„é‡é‡åŠå…¶ä»·å€¼:";
         cin >> w[i] >> v[i];
     }
 
