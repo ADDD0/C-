@@ -1,3 +1,6 @@
+/**
+ * 使用递归法输出n阶杨辉三角形
+ */
 #include <iostream>
 #include <string.h>
 

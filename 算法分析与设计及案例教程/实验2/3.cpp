@@ -1,3 +1,7 @@
+/**
+ * 输出n阶魔方矩阵(n为奇数),魔方矩阵为一个n*n矩阵.
+ * 它的行,列及主,次对角线上的数字和均相同.
+ */
 #include <iostream>
 #include <string.h>
 #include <iomanip>

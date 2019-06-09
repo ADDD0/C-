@@ -1,34 +1,34 @@
 /**
- * Ê¹ÓÃ¶¯Ì¬¹æ»®½â¾ö×ÊÔ´·ÖÅä£ºÀýÈç4¸ö×ÊÔ´·ÖÅä¸ø3¸öÏîÄ¿£¬Ã¿¸öÏîÄ¿¶ÔÓ¦µÄÀûÈóÈçÏÂ£¬
- * Ê¹¸ø³öÀûÈó×î´óµÄ·ÖÅä·½°¸¡£
+ * ä½¿ç”¨åŠ¨æ€è§„åˆ’è§£å†³èµ„æºåˆ†é…ï¼šä¾‹å¦‚4ä¸ªèµ„æºåˆ†é…ç»™3ä¸ªé¡¹ç›®ï¼Œæ¯ä¸ªé¡¹ç›®å¯¹åº”çš„åˆ©æ¶¦å¦‚ä¸‹ï¼Œ
+ * ä½¿ç»™å‡ºåˆ©æ¶¦æœ€å¤§çš„åˆ†é…æ–¹æ¡ˆã€‚
  */
 #include <iostream>
 
 using namespace std;
 
-const int RESOURCE = 4; //×ÊÔ´ÊýÁ¿
-const int CASE_NUM = 3; //ÏîÄ¿ÊýÁ¿
-//¸÷¸öÏîÄ¿¶ÔÓ¦Í¶×ÊÁ¿µÄÊÕÒæÂÊ
+const int RESOURCE = 4; //èµ„æºæ•°é‡
+const int CASE_NUM = 3; //é¡¹ç›®æ•°é‡
+//å„ä¸ªé¡¹ç›®å¯¹åº”æŠ•èµ„é‡çš„æ”¶ç›ŠçŽ‡
 const double RATE[CASE_NUM][RESOURCE+1] = {{0, 0.23, 0.35, 0.36, 0.49},
                                          {0, 0.22, 0.36, 0.39, 0.54},
                                          {0, 0.38, 0.45, 0.9, 0.45}};
-//±£´æÇ°i¸öÏîÄ¿µÄ¶ÔÓÚÃ¿¸ö×ÊÔ´µÄ×î´óÊÕÒæµÄÊý×é(¿ÉÒÔÓÃÒ»Î¬Êý×é´úÌæ,ÕâÀïÎªdebug·½±ã)                                         
+//ä¿å­˜å‰iä¸ªé¡¹ç›®çš„å¯¹äºŽæ¯ä¸ªèµ„æºçš„æœ€å¤§æ”¶ç›Šçš„æ•°ç»„(å¯ä»¥ç”¨ä¸€ç»´æ•°ç»„ä»£æ›¿,è¿™é‡Œä¸ºdebugæ–¹ä¾¿)                                         
 double array[100][100] = {0};
 
 int main(){
-    //³õÊ¼»¯µÚÒ»¸öÏîÄ¿µÄ¸÷¸öÍ¶×ÊÊýµÄ×î¼ÑÊÕÒæ
+    //åˆå§‹åŒ–ç¬¬ä¸€ä¸ªé¡¹ç›®çš„å„ä¸ªæŠ•èµ„æ•°çš„æœ€ä½³æ”¶ç›Š
     for(int i = 0; i <= RESOURCE; i++){
         array [0][i] =  i*RATE[0][i];
     }
 
-    int all = 0;    //allÎªÄ¿Ç°ÒÑ¾­Í¶×ÊµÄ×ÊÔ´Êý
-    for(int i = 1; i < CASE_NUM; i++){ //ÇóÃ¿¸öÏîÄ¿µÄÍ¶×ÊÊý
-        int y = 0; //µÚi - 1 ÏîÄ¿ÒªÍ¶×ÊµÄ×ÊÔ´
-        for(int j = 0; j <= RESOURCE; j++){ ////¸øÇ°i¸öÏîÄ¿×Ü¹²·ÖÅäµÄ×ÊÔ´£¬ÏîÄ¿Í¶×ÊÊý 0¡«RESOURCE
-            double maxx = 0;    //µ±Ç°Í¶×ÊÊýÏÂ×î´óÓ¯Àû
-            for(int k = 0; k <= j; k++){    //¸øµÚi¸öÍ¶×Êk¸ö×ÊÔ´£¬ k < = RESOURCE
+    int all = 0;    //allä¸ºç›®å‰å·²ç»æŠ•èµ„çš„èµ„æºæ•°
+    for(int i = 1; i < CASE_NUM; i++){ //æ±‚æ¯ä¸ªé¡¹ç›®çš„æŠ•èµ„æ•°
+        int y = 0; //ç¬¬i - 1 é¡¹ç›®è¦æŠ•èµ„çš„èµ„æº
+        for(int j = 0; j <= RESOURCE; j++){ ////ç»™å‰iä¸ªé¡¹ç›®æ€»å…±åˆ†é…çš„èµ„æºï¼Œé¡¹ç›®æŠ•èµ„æ•° 0ï½žRESOURCE
+            double maxx = 0;    //å½“å‰æŠ•èµ„æ•°ä¸‹æœ€å¤§ç›ˆåˆ©
+            for(int k = 0; k <= j; k++){    //ç»™ç¬¬iä¸ªæŠ•èµ„kä¸ªèµ„æºï¼Œ k < = RESOURCE
                 double temp = array[i - 1][j - k] + k * RATE[i][k];
-                if(temp >= maxx){
+                if(temp > maxx){
                     maxx = temp;
                     y = j - k;
                 }
@@ -36,7 +36,7 @@ int main(){
             array[i][j] = maxx;
         }
         all += y;
-        printf("%d ºÅCASEÍ¶×Ê %d¸ö\n", i, y);
+        printf("%d å·CASEæŠ•èµ„ %dä¸ª\n", i, y);
     }
-    printf("%d ºÅCASEÍ¶×Ê %d¸ö\n", CASE_NUM, RESOURCE - all);
+    printf("%d å·CASEæŠ•èµ„ %dä¸ª\n", CASE_NUM, RESOURCE - all);
 }

@@ -1,3 +1,6 @@
+/**
+ * 0-1背包问题
+ */
 #include <iostream>
 
 using namespace std;
