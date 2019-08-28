@@ -1,39 +1,39 @@
 /**
- * æ—¶é—´å®‰æ’é—®é¢˜ã€‚æœ‰né¡¹å·¥ä½œï¼Œæ¯é¡¹å·¥ä½œåˆ†åˆ«åœ¨Siå¼€å§‹ï¼ŒTiç»“æŸã€‚
- * ä¾‹å¦‚S={1,2,4,6,8}ï¼ŒT={3,5,7,8,10}ã€‚å¯¹æ¯é¡¹å·¥ä½œï¼Œä½ éƒ½å¯ä»¥é€‰æ‹©ä¸å¦ï¼Œè‹¥é€‰æ‹©å‚åŠ ï¼Œ
- * åˆ™å¿…é¡»è‡³å§‹è‡³ç»ˆå‚åŠ å…¨ç¨‹å‚ä¸ï¼Œä¸”å‚ä¸å·¥ä½œçš„æ—¶é—´æ®µä¸èƒ½æœ‰é‡å ã€‚
+ * Ê±¼ä°²ÅÅÎÊÌâ
+ * ÓĞnÏî¹¤×÷,Ã¿Ïî¹¤×÷·Ö±ğÔÚSi¿ªÊ¼,Ti½áÊø.¶ÔÃ¿Ïî¹¤×÷,Äã¶¼¿ÉÒÔÑ¡Ôñ²Î¼ÓÓë·ñ,
+ * ÈôÑ¡Ôñ²Î¼Ó,Ôò±ØĞëÖÁÊ¼ÖÁÖÕ²Î¼ÓÈ«³Ì²ÎÓë,ÇÒ²ÎÓë¹¤×÷µÄÊ±¼ä¶Î²»ÄÜÓĞÖØµş
+ * ÀıÈçS={1,2,4,6,8},T={3,5,7,8,10}
  */
-#include<iostream>
-#include<algorithm>
-#include<cstdlib>
+#include <iostream>
+#include <algorithm>
+#include <cstdlib>
+
 using namespace std;
-#define Max_N 100000
-//int start[Max_N];
-//int end[Max_N];
-int n;
-pair<int,int> p[Max_N];
-int main()
-{
-	cin>>n;
-	for(int i=0;i<n;i++)
-	{
-		int start,end;
-	   cin>>start>>end;
-       p[i]=make_pair(end,start);	
-	}                               //è¾“å…¥æ•°æ®ï¼Œå¹¶ç»„æˆpairå¯¹ä¿å­˜åœ¨æ•°ç»„ä¸­ 
-	sort(p,p+n);                     //æŒ‰ç…§pairä¸­ç¬¬ä¸€ä¸ªå…³é”®è¯è¿›è¡Œå‡åºæ’åº 
-	
-	int last=0,ans=0;
-	cout<<"é€‰æ‹©çš„å·¥ä½œçš„èµ·å§‹æ—¶é—´æœ‰:"<<endl;
-	for(int i=0;i<n;i++)
-	{
-		if(p[i].second>last)             //ç°åœ¨å¯»æ‰¾çš„ä¸‹ä¸€ä¸ªå·¥ä½œçš„å¼€å§‹æ—¶é—´å¤§äºä¸Šä¸€æ¬¡å·¥ä½œçš„ç»“æŸæ—¶é—´ï¼Œåˆ™é€‰æ‹©è¯¥æ¬¡å·¥ä½œ 
-		  {
-		    last=p[i].first;
-		    ans++;
-		    cout<<p[i].second<<"--"<<p[i].first<<endl;
-		  }
-	}
-	cout<<"å…±é€‰æ‹©äº† "<<ans<<" ä¸ªå·¥ä½œ"<<endl;
-	return 0;
+
+#define Max_N 1000
+
+int main() {
+    int n;
+    pair<int,int> p[Max_N];
+
+    cin >> n;
+    for (int i=0; i < n; ++i) {
+        int start, end;
+        cin >> start >> end;
+        p[i] = make_pair(end, start);
+    }                //ÊäÈëÊı¾İ,²¢×é³Épair¶Ô±£´æÔÚÊı×éÖĞ
+    sort(p, p + n);  //°´ÕÕpairÖĞµÚÒ»¸ö¹Ø¼ü´Ê½øĞĞÉıĞòÅÅĞò
+
+    int last=0, ans=0;
+    cout << "Ñ¡ÔñµÄ¹¤×÷µÄÆğÊ¼Ê±¼äÓĞ:" << endl;
+    for(int i=0; i < n; ++i) {
+        //ÏÖÔÚÑ°ÕÒµÄÏÂÒ»¸ö¹¤×÷µÄ¿ªÊ¼Ê±¼ä´óÓÚÉÏÒ»´Î¹¤×÷µÄ½áÊøÊ±¼ä,ÔòÑ¡Ôñ¸Ã´Î¹¤×÷
+        if(p[i].second > last) {
+            last = p[i].first;
+            ans++;
+            cout << p[i].second << "--" << p[i].first << endl;
+        }
+    }
+    cout << "¹²Ñ¡ÔñÁË" << ans << "¸ö¹¤×÷" << endl;
+    return 0;
 }

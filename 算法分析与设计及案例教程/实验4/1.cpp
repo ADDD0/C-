@@ -1,7 +1,6 @@
 /*
  * 字符串的模式匹配算法:KMP算法
  */
-
 #include <iostream>
 #include <vector>
 #include <string>
