@@ -22,8 +22,8 @@ int main(){
     int all = 0;                         //all为目前已经投资的资源数
     for(int i=1; i < CASE_NUM; ++i) {    //求每个项目的投资数
         int y=0;                         //第i-1项目要投资的资源
-		//给前i个项目总共分配的资源,项目投资数0~RESOURCE
-        for(int j=0; j <= RESOURCE; ++j) { 
+        //给前i个项目总共分配的资源,项目投资数0~RESOURCE
+        for(int j=0; j <= RESOURCE; ++j) {
             double maxx=0;               //当前投资数下最大盈利
             for(int k=0; k <= j; ++k) {  //给第i个投资k个资源,k<=RESOURCE
                 double temp = array[i - 1][j - k] + k * RATE[i][k];
@@ -35,7 +35,7 @@ int main(){
             array[i][j] = maxx;
         }
         all += y;
-        printf("%d 号CASE投资 %d个\n", i, y);
+        cout << i << "号CASE投资 %d" << y << " 个" << endl;
     }
-    printf("%d 号CASE投资 %d个\n", CASE_NUM, RESOURCE - all);
+    cout << CASE_NUM << "号CASE投资 %d" << RESOURCE - all << " 个" << endl;
 }
