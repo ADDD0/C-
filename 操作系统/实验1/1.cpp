@@ -1,99 +1,103 @@
 #include "PCB.h"
 #include <iostream>
-#include <list>
 
 using namespace std;
 
 void create() {
     PCB *p=new PCB();
+    int i;
 
-	p->init();
-    addPCB(p, pall);
+    p->init();
     addPCB(p, pr);
 }
 
 void block() {
     string processNameOfBlock;
-    cout << "ÇëÊäÈëÄúÒª×èÈûµÄ½ø³ÌÃû:";
+    cout << "è¯·è¾“å…¥æ‚¨è¦é˜»å¡žçš„è¿›ç¨‹å:";
     cin >> processNameOfBlock;
 
-    if (PCB *p=check(processNameOfBlock))
+    if (PCB *p=search(processNameOfBlock))
         if (p->status < 0)
-            cout << "¸Ã½ø³ÌÒÑÔÚ×èÈû¶ÓÁÐÖÐ" << endl;
+            cout << "è¯¥è¿›ç¨‹å·²åœ¨é˜»å¡žé˜Ÿåˆ—ä¸­" << endl;
         else if (p->status > 0) {
             trans(p->name, pw, pb);
             p->status = -1;
-            cout << "ÒÑ½«¸Ã½ø³Ì´ÓÔËÐÐ¶ÓÁÐÒÆÖÁ×èÈû¶ÓÁÐÖÐ" << endl;
+            cout << "å·²å°†è¯¥è¿›ç¨‹ä»Žè¿è¡Œé˜Ÿåˆ—è½¬ç§»è‡³é˜»å¡žé˜Ÿåˆ—" << endl;
         } else {
             trans(p->name, pr, pb);
             p->status = -1;
-            cout << "ÒÑ½«¸Ã½ø³Ì´Ó¾ÍÐ÷¶ÓÁÐÒÆÖÁ×èÈû¶ÓÁÐÖÐ" << endl;
+            cout << "å·²å°†è¯¥è¿›ç¨‹ä»Žå°±ç»ªé˜Ÿåˆ—è½¬ç§»è‡³é˜»å¡žé˜Ÿåˆ—" << endl;
         }
 }
 
 void wake() {
     string processNameOfWake;
-    cout << "ÇëÊäÈëÄúÒª»½ÐÑµÄ½ø³ÌÃû:";
+    cout << "è¯·è¾“å…¥æ‚¨è¦å”¤é†’çš„è¿›ç¨‹å:";
     cin >> processNameOfWake;
 
-    if (PCB *p=check(processNameOfWake))
+    if (PCB *p=search(processNameOfWake))
         if (p->status < 0) {
             trans(p->name, pb, pr);
             p->status = 0;
-            cout << "ÒÑ½«¸Ã½ø³Ì´Ó×èÈû¶ÓÁÐÖÐ»½ÐÑ" << endl;
+            cout << "å·²å°†è¯¥è¿›ç¨‹ä»Žé˜»å¡žé˜Ÿåˆ—ä¸­å”¤é†’" << endl;
         } else if (p->status > 0)
-            cout << "¸Ã½ø³ÌÕýÔÚÔËÐÐ,ÎÞÐë»½ÐÑ" << endl;
+            cout << "è¯¥è¿›ç¨‹æ­£åœ¨è¿è¡Œ,æ— éœ€å”¤é†’" << endl;
         else
-            cout << "¸Ã½ø³ÌÒÑÔÚ¾ÍÐ÷¶ÓÁÐÖÐ,ÎÞÐë»½ÐÑ" << endl;
+            cout << "è¯¥è¿›ç¨‹å·²åœ¨å°±ç»ªé˜Ÿåˆ—ä¸­,æ— éœ€å”¤é†’" << endl;
 }
 
 void stop() {
     string processNameOfStop;
-    cout << "ÇëÊäÈëÄúÒªÖÕÖ¹µÄ½ø³ÌÃû:";
+    cout << "è¯·è¾“å…¥æ‚¨è¦ç»ˆæ­¢çš„è¿›ç¨‹å:";
     cin >> processNameOfStop;
 
-    if (PCB *p=check(processNameOfStop)) {
+    if (PCB *p=search(processNameOfStop)) {
         if (p->status < 0)
-            p = deletePCB(processNameOfStop, pb);
+            deletePCB(processNameOfStop, pb);
         else if (p->status > 0)
-            p = deletePCB(processNameOfStop, pw);
+            deletePCB(processNameOfStop, pw);
         else
-            p = deletePCB(processNameOfStop, pr);
+            deletePCB(processNameOfStop, pr);
+        cout << "å·²å°†è¯¥è¿›ç¨‹ç»ˆæ­¢" << endl;
         delete p;
     }
 }
 
 void show() {
-    cout << "¾ÍÐ÷¶ÓÁÐ:";
+    cout << "å°±ç»ªé˜Ÿåˆ—:";
     print(pr);
-    cout << endl << "ÔËÐÐ¶ÓÁÐ:";
+    cout << endl << "è¿è¡Œé˜Ÿåˆ—:";
     print(pw);
-    cout << endl << "×èÈû¶ÓÁÐ:";
+    cout << endl << "é˜»å¡žé˜Ÿåˆ—:";
     print(pb);
+    cout << endl;
 }
 
 int main() {
     int num;
+    pr = new PCB();
+    pw = new PCB();
+    pb = new PCB();
 
     do {
-        cout << "ÏµÍ³Ö÷²Ëµ¥" << endl;
-        cout << "1...´´½¨" << endl;
-        cout << "2...×èÈû" << endl;
-        cout << "3...»½ÐÑ" << endl;
-        cout << "4...ÖÕÖ¹" << endl;
-        cout << "5...ÏÔÊ¾" << endl;
-        cout << "0...ÍË³ö" << endl;
-        cout << "ÇëÊäÈëÄúÐèÒªµÄ¹¦ÄÜ(0-5):";
+        cout << endl << "ç³»ç»Ÿä¸»èœå•" << endl;
+        cout << "1...åˆ›å»º" << endl;
+        cout << "2...é˜»å¡ž" << endl;
+        cout << "3...å”¤é†’" << endl;
+        cout << "4...ç»ˆæ­¢" << endl;
+        cout << "5...æ˜¾ç¤º" << endl;
+        cout << "0...é€€å‡º" << endl;
+        cout << "è¯·è¾“å…¥æ‚¨éœ€è¦çš„åŠŸèƒ½(0-5):";
         cin >> num;
 
         switch(num) {
-            case 1: create(),cout<<"!"<<num; break;
+            case 1: create(); break;
             case 2: block(); break;
             case 3: wake(); break;
             case 4: stop(); break;
             case 5: show(); break;
             default: break;
         }
-    } while (num != 0);
+    } while (num);
     return 0;
 }

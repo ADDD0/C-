@@ -8,29 +8,49 @@ class PCB {
         string name;
         int prior;
         int time;
-        int status;  // 0Îª¾ÍĞ÷ 1ÎªÔËĞĞ -1Îª×èÈû
-        PCB* next;
-		
+        int status;  // 0ä¸ºå°±ç»ª 1ä¸ºè¿è¡Œ -1ä¸ºé˜»å¡
+        PCB *next;
+
+        PCB() {
+            next = NULL;
+        }
         void init() {
-            cout << "ÇëÊäÈë½ø³ÌÃû:";
+            cout << "è¯·è¾“å…¥è¿›ç¨‹å:";
             cin >> name;
-            cout << "ÇëÊäÈëÓÅÏÈ¼¶:";
+            cout << "è¯·è¾“å…¥ä¼˜å…ˆçº§:";
             cin >> prior;
-            cout << "ÇëÊäÈëÔËĞĞÊ±¼ä:";
+            cout << "è¯·è¾“å…¥è¿è¡Œæ—¶é—´:";
             cin >> time;
             status = 0;
-            next = NULL;
         }
 };
 
-PCB *pr, *pw, *pb;  //¾ÍĞ÷¶ÓÁĞ  ÔËĞĞ¶ÓÁĞ  ×èÈû¶ÓÁĞ
-PCB *pall;  //ËùÓĞ½ø³Ì¶¼ÔÚ´Ë¶ÓÁĞµ±ÖĞ
+PCB *pr, *pw, *pb;  //å°±ç»ªé˜Ÿåˆ—  è¿è¡Œé˜Ÿåˆ—  é˜»å¡é˜Ÿåˆ—
 
-PCB *check(string name) {
-    for (PCB *p=pall->next; p; p=p->next)
+void print(PCB *pq) {
+    PCB *p=pq;
+
+    while (p = p->next)
+        cout << p->name << " ";
+}
+
+PCB *check(string name, PCB *pq) {
+    for (PCB *p=pq->next; p; p=p->next)
         if (name == p->name)
             return p;
-    cout << "¸Ã½ø³ÌÃû²»´æÔÚ,ÇëÏÈ´´½¨" << endl;
+    return NULL;
+}
+
+PCB *search(string name) {
+    PCB *p;
+
+    if (p = check(name, pr))
+        return p;
+    else if (p = check(name, pw))
+        return p;
+    else if (p = check(name, pb))
+        return p;
+    cout << "è¯¥è¿›ç¨‹ä¸å­˜åœ¨,è¯·å…ˆåˆ›å»º" << endl;
     return NULL;
 }
 
@@ -44,8 +64,8 @@ PCB *deletePCB(string name, PCB *pq) {
                 pre->next = NULL;
                 return p;
             }
-            p = p->next;
-            pre->next = p;
+            pre->next = p->next;
+            p->next = NULL;
             return p;
         }
         pre = p;
@@ -58,20 +78,16 @@ void addPCB(PCB *p, PCB *pq) {
 
     if (p == NULL)
         return;
-    while (pre = pre->next)
-        ;
+    if (pre->next == NULL) {
+        pre->next = p;
+        return;
+    }
+    while (pre->next)
+        pre = pre->next;
     pre->next = p;
-    p->next = NULL;
 }
 
 void trans(string name, PCB *pq1, PCB *pq2) {
     PCB *pd=deletePCB(name, pq1);
     addPCB(pd, pq2);
-}
-
-void print(PCB *pq) {
-    PCB *p=pq;
-
-    for (p=p->next; p; p=p->next)
-        cout << p->name << "  ";
 }
