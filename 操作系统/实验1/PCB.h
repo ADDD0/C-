@@ -1,34 +1,40 @@
 #include <iostream>
-#include <string.h>
+#include <string>
+
+using namespace std;
 
 class PCB {
     public:
         string name;
         int prior;
         int time;
-        int status;  // 0ä¸ºå°±ç»ª 1ä¸ºè¿è¡Œ -1ä¸ºé˜»å¡
+        int status;  // 0Îª¾ÍĞ÷ 1ÎªÔËĞĞ -1Îª×èÈû
         PCB* next;
-        PCB() {
-            cout << "è¯·è¾“å…¥è¿›ç¨‹å:";
+		
+        void init() {
+            cout << "ÇëÊäÈë½ø³ÌÃû:";
             cin >> name;
-            cout << "è¯·è¾“å…¥ä¼˜å…ˆçº§:";
+            cout << "ÇëÊäÈëÓÅÏÈ¼¶:";
             cin >> prior;
-            cout << "è¯·è¾“å…¥è¿è¡Œæ—¶é—´:";
+            cout << "ÇëÊäÈëÔËĞĞÊ±¼ä:";
             cin >> time;
             status = 0;
             next = NULL;
         }
 };
 
+PCB *pr, *pw, *pb;  //¾ÍĞ÷¶ÓÁĞ  ÔËĞĞ¶ÓÁĞ  ×èÈû¶ÓÁĞ
+PCB *pall;  //ËùÓĞ½ø³Ì¶¼ÔÚ´Ë¶ÓÁĞµ±ÖĞ
+
 PCB *check(string name) {
     for (PCB *p=pall->next; p; p=p->next)
         if (name == p->name)
             return p;
-    cout << "è¯¥è¿›ç¨‹åä¸å­˜åœ¨,è¯·å…ˆåˆ›å»º" << endl;
+    cout << "¸Ã½ø³ÌÃû²»´æÔÚ,ÇëÏÈ´´½¨" << endl;
     return NULL;
 }
 
-PCB deletePCB(string name, PCB *pq) {
+PCB *deletePCB(string name, PCB *pq) {
     PCB *pre=pq, *p;
 
     do {
@@ -47,7 +53,7 @@ PCB deletePCB(string name, PCB *pq) {
     return NULL;
 }
 
-void addPCB(PCB p, PCB *pq) {
+void addPCB(PCB *p, PCB *pq) {
     PCB *pre=pq;
 
     if (p == NULL)
@@ -59,7 +65,7 @@ void addPCB(PCB p, PCB *pq) {
 }
 
 void trans(string name, PCB *pq1, PCB *pq2) {
-    PCB pd=deletePCB(name, pq1);
+    PCB *pd=deletePCB(name, pq1);
     addPCB(pd, pq2);
 }
 
