@@ -2,20 +2,20 @@
 
 using namespace std;
 
-void move(char a, char c) {
+void move(int n, char a, char c) {
     static int sum=0;
 
-    cout << ++sum << ":  " << a << "->" << c << endl;
+    cout << ++sum << ":" << "move disk" << n << " " << a << "->" << c << endl;
 }
 
 void hanoi(int n, char a, char b, char c) {
     if (n==1) {
-        move(a, c);
+        move(n, a, c);
         return;
     }
 
     hanoi(n-1, a, c, b);
-    move(a, c);
+    move(n, a, c);
     hanoi(n-1, b, a, c);
 }
 
